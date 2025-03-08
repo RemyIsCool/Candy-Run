@@ -1,4 +1,4 @@
-# Candy Run
+# 🍭 Candy Run 🍬
 
 [Play on Itch.io](https://nerdulus.itch.io/candy-run)
 
