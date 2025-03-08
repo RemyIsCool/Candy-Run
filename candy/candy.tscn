@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://7tipgdyy0ubi"]
+
+[ext_resource type="Script" uid="uid://cn1d24rm2i7h4" path="res://candy/candy.gd" id="1_ht3hb"]
+[ext_resource type="Texture2D" uid="uid://4kdi4kmm22fe" path="res://candy/candy.png" id="1_o727j"]
+[ext_resource type="PackedScene" uid="uid://dgnk2lx54313n" path="res://components/delete_when_off_screen.tscn" id="3_ni2q6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x46hq"]
+radius = 4.03113
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ni2q6"]
+radius = 4.03113
+
+[node name="Candy" type="RigidBody2D"]
+collision_layer = 0
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_ht3hb")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_o727j")
+offset = Vector2(0, -0.5)
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_x46hq")
+
+[node name="DeleteWhenOffScreen" parent="." instance=ExtResource("3_ni2q6")]
+position = Vector2(-8.9407e-08, -0.5)
+scale = Vector2(1, 0.55)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_ni2q6")
+debug_color = Color(0.975452, 0, 0.419295, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

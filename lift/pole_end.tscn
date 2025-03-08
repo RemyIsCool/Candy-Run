@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs71bgavr37pl"]
+
+[ext_resource type="PackedScene" uid="uid://d17vswggd1skv" path="res://components/deleter.tscn" id="1_xki7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkgta"]
+size = Vector2(2, 1)
+
+[node name="PoleEnd" type="Polygon2D"]
+scale = Vector2(2, 1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 2, 0, 2, 1, 0, 1)
+
+[node name="Deleter" parent="." instance=ExtResource("1_xki7b")]
+position = Vector2(1.5, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deleter"]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_pkgta")

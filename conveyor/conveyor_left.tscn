@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ipy6tovj5je"]
+
+[ext_resource type="Script" uid="uid://ciqij8li1ofhg" path="res://conveyor/conveyor.gd" id="1_g446m"]
+[ext_resource type="Texture2D" uid="uid://c7airmnxoj5ba" path="res://conveyor/conveyor.png" id="2_vlt5r"]
+
+[node name="ConveyorLeft" type="Node2D"]
+
+[node name="Conveyor" type="StaticBody2D" parent="."]
+collision_mask = 0
+constant_linear_velocity = Vector2(200, 0)
+script = ExtResource("1_g446m")
+type = 0
+
+[node name="Sprite" type="Sprite2D" parent="Conveyor"]
+position = Vector2(0, 7)
+texture = ExtResource("2_vlt5r")
+offset = Vector2(0, 0.5)
+hframes = 9
+
+[node name="Timer" type="Timer" parent="Conveyor"]
+wait_time = 0.05
+autostart = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Conveyor"]
+polygon = PackedVector2Array(-6, 6, -9, 9, 8, 9, 8, 6)
+
+[connection signal="timeout" from="Conveyor/Timer" to="Conveyor" method="_on_timer_timeout"]

@@ -1,0 +1,246 @@
+[gd_scene load_steps=14 format=4 uid="uid://d33r1k405mgkk"]
+
+[ext_resource type="Script" uid="uid://cg3yj3ctu7g22" path="res://levels/level_4.gd" id="1_0fd8o"]
+[ext_resource type="TileSet" uid="uid://c0vtlrojionc8" path="res://levels/tile_set.tres" id="1_fwt2v"]
+[ext_resource type="PackedScene" uid="uid://cuf60le3yi60u" path="res://player/player.tscn" id="2_b15rf"]
+[ext_resource type="AudioStream" uid="uid://diqdjarbbb02i" path="res://music/track_2.wav" id="2_dmnu2"]
+[ext_resource type="PackedScene" uid="uid://co3d3tlkm7wsb" path="res://levels/checkpoint.tscn" id="2_ng40l"]
+[ext_resource type="PackedScene" uid="uid://7tipgdyy0ubi" path="res://candy/candy.tscn" id="3_s4mq8"]
+[ext_resource type="PackedScene" uid="uid://cwcw7laihp8c5" path="res://lift/pole.tscn" id="4_t6q73"]
+[ext_resource type="PackedScene" uid="uid://dmrcou7boxfv6" path="res://lift/spawner.tscn" id="5_hokjj"]
+[ext_resource type="FontFile" uid="uid://d05pbcx2gcuiu" path="res://font/PixelEmulator-xq08.ttf" id="6_hokjj"]
+[ext_resource type="Texture2D" uid="uid://d3ly4cabfbed" path="res://decorations/funnel.png" id="9_sc6c1"]
+[ext_resource type="PackedScene" uid="uid://buvgeqan5pcfe" path="res://levels/background.tscn" id="11_04hp8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fd8o"]
+font = ExtResource("6_hokjj")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_hokjj"]
+font = ExtResource("6_hokjj")
+font_size = 10
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_0fd8o")
+
+[node name="Background" parent="." instance=ExtResource("11_04hp8")]
+
+[node name="Checkpoint" parent="." instance=ExtResource("2_ng40l")]
+position = Vector2(262, 145)
+fake = true
+
+[node name="Track2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_dmnu2")
+autoplay = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAVAAsAAAACAAIAAAAVAAoAAAACAAEAAAAUAAsAAAABAAIAAAAUAAoAAAABAAEAAAATAAsAAAABAAIAAAATAAoAAAAEAAEAAAASAAsAAAABAAIAAAASAAoAAAABAAAAAAARAAsAAAABAAIAAAARAAoAAAABAAAAAAAQAAsAAAABAAIAAAAQAAoAAAABAAAAAAAPAAsAAAABAAIAAAAPAAoAAAABAAAAAAAOAAsAAAABAAIAAAAOAAoAAAABAAAAAAANAAsAAAABAAIAAAANAAoAAAABAAAAAAAMAAsAAAABAAIAAAAMAAoAAAABAAAAAAALAAsAAAABAAIAAAALAAoAAAABAAAAAAAKAAsAAAABAAIAAAAKAAoAAAABAAAAAAAJAAsAAAABAAIAAAAJAAoAAAABAAAAAAAIAAsAAAABAAIAAAAIAAoAAAABAAAAAAAHAAsAAAABAAIAAAAHAAoAAAABAAAAAAAGAAsAAAABAAIAAAAGAAoAAAABAAAAAAAFAAsAAAABAAIAAAAFAAoAAAABAAAAAAAEAAsAAAABAAIAAAAEAAoAAAABAAAAAAADAAsAAAABAAIAAAADAAoAAAABAAAAAAACAAsAAAABAAIAAAACAAoAAAABAAAAAAABAAsAAAABAAIAAAABAAoAAAABAAAAAAAAAAsAAAABAAIAAAAAAAoAAAADAAEAAAAVAAkAAAACAAEAAAAVAAgAAAACAAEAAAAVAAcAAAACAAEAAAAVAAYAAAACAAEAAAAVAAUAAAACAAEAAAAVAAQAAAACAAEAAAAVAAMAAAACAAEAAAAVAAIAAAACAAEAAAAVAAEAAAACAAEAAAAVAAAAAAACAAEAAAAVAP//AAACAAAAAAAUAAkAAAABAAEAAAAUAAgAAAABAAEAAAAUAAcAAAABAAEAAAAUAAYAAAABAAEAAAAUAAUAAAABAAEAAAAUAAQAAAABAAEAAAAUAAMAAAABAAEAAAAUAAIAAAABAAEAAAAUAAEAAAABAAEAAAAUAAAAAAABAAEAAAAUAP//AAABAAAAAAATAAkAAAAAAAEAAAATAAgAAAAAAAEAAAATAAcAAAAAAAEAAAATAAYAAAAAAAEAAAATAAUAAAAAAAEAAAATAAQAAAAAAAEAAAATAAMAAAAAAAEAAAATAAIAAAAAAAEAAAATAAEAAAAAAAEAAAATAAAAAAAAAAEAAAATAP//AAAAAAAAAAAAAAAAAAACAAEAAAAAAP//AAACAAAAAAD//wAAAAABAAEAAAD/////AAABAAAAAAAAAAkAAAACAAEAAAAAAAgAAAACAAEAAAAAAAcAAAACAAEAAAAAAAYAAAACAAEAAAAAAAUAAAACAAEAAAAAAAQAAAACAAEAAAAAAAMAAAACAAEAAAAAAAIAAAACAAEAAAAAAAEAAAACAAEAAAD//wsAAAABAAIAAAD//woAAAABAAEAAAD//wkAAAABAAEAAAD//wgAAAABAAEAAAD//wcAAAABAAEAAAD//wYAAAABAAEAAAD//wUAAAABAAEAAAD//wQAAAABAAEAAAD//wMAAAABAAEAAAD//wIAAAABAAEAAAD//wEAAAABAAEAAAD+/wsAAAAAAAIAAAD+/woAAAAAAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAEAAAD+/wYAAAAAAAEAAAD+/wUAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAEAAAD+////AAAAAAAAAAA=")
+tile_set = ExtResource("1_fwt2v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+
+[node name="Player" parent="." instance=ExtResource("2_b15rf")]
+position = Vector2(138, 92)
+
+[node name="Candy" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(72, 155)
+type = 1
+color = 2
+
+[node name="Candy2" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(104, 155)
+type = 1
+
+[node name="Candy3" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(137, 155)
+type = 1
+color = 2
+
+[node name="Candy4" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(161, 155)
+type = 1
+color = 2
+
+[node name="Candy5" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(201, 155)
+type = 1
+
+[node name="Candy6" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(233, 155)
+type = 1
+color = 2
+
+[node name="Candy7" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(249, 155)
+type = 1
+
+[node name="Candy8" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(273, 155)
+type = 1
+
+[node name="Candy9" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(185, 155)
+type = 1
+color = 1
+
+[node name="Candy10" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(121, 155)
+type = 1
+color = 1
+
+[node name="Candy11" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(49, 155)
+type = 1
+color = 1
+
+[node name="Candy12" parent="." instance=ExtResource("3_s4mq8")]
+position = Vector2(33, 155)
+type = 1
+
+[node name="Pole11" parent="." instance=ExtResource("4_t6q73")]
+position = Vector2(112, 165)
+
+[node name="Pole2" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -15)
+
+[node name="Pole3" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -30)
+
+[node name="Pole4" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -45)
+
+[node name="Pole5" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -60)
+
+[node name="Pole6" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -75)
+
+[node name="Pole7" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -90)
+
+[node name="Pole8" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -105)
+
+[node name="Pole9" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -120)
+
+[node name="Pole10" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -135)
+
+[node name="Pole11" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -150)
+
+[node name="Pole12" parent="Pole11" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -165)
+
+[node name="Spawner8" parent="." instance=ExtResource("5_hokjj")]
+z_index = -1
+position = Vector2(112, 180)
+velocity = Vector2(0, -100)
+time = 0.75
+
+[node name="Pole12" parent="." instance=ExtResource("4_t6q73")]
+position = Vector2(160, 165)
+
+[node name="Pole2" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -15)
+
+[node name="Pole3" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -30)
+
+[node name="Pole4" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -45)
+
+[node name="Pole5" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -60)
+
+[node name="Pole6" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -75)
+
+[node name="Pole7" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -90)
+
+[node name="Pole8" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -105)
+
+[node name="Pole9" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -120)
+
+[node name="Pole10" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -135)
+
+[node name="Pole11" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -150)
+
+[node name="Pole12" parent="Pole12" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -165)
+
+[node name="Spawner9" parent="." instance=ExtResource("5_hokjj")]
+z_index = -1
+position = Vector2(160, -21)
+velocity = Vector2(0, 100)
+time = 0.75
+
+[node name="Pole13" parent="." instance=ExtResource("4_t6q73")]
+position = Vector2(208, 165)
+
+[node name="Pole2" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -15)
+
+[node name="Pole3" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -30)
+
+[node name="Pole4" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -45)
+
+[node name="Pole5" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -60)
+
+[node name="Pole6" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -75)
+
+[node name="Pole7" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -90)
+
+[node name="Pole8" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -105)
+
+[node name="Pole9" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -120)
+
+[node name="Pole10" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -135)
+
+[node name="Pole11" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -150)
+
+[node name="Pole12" parent="Pole13" instance=ExtResource("4_t6q73")]
+position = Vector2(0, -165)
+
+[node name="Spawner10" parent="." instance=ExtResource("5_hokjj")]
+z_index = -1
+position = Vector2(208, 180)
+velocity = Vector2(0, -100)
+time = 0.75
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 33.0
+offset_right = 216.0
+offset_bottom = 57.0
+text = "You Win!"
+label_settings = SubResource("LabelSettings_0fd8o")
+
+[node name="YourTime" type="Label" parent="."]
+offset_left = 83.0
+offset_top = 82.0
+offset_right = 293.0
+offset_bottom = 105.0
+text = "Your Time Was: %ss"
+label_settings = SubResource("LabelSettings_hokjj")
+
+[node name="Funnel" type="Sprite2D" parent="."]
+position = Vector2(40, 147)
+texture = ExtResource("9_sc6c1")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0dd6xdva4i4y"]
+
+[ext_resource type="Script" uid="uid://rivct7lpjdfl" path="res://candy/candy_spawner.gd" id="1_gvuig"]
+
+[node name="CandySpawner" type="Marker2D"]
+script = ExtResource("1_gvuig")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

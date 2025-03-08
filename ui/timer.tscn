@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5fgsp71a87yi"]
+
+[ext_resource type="FontFile" uid="uid://d05pbcx2gcuiu" path="res://font/PixelEmulator-xq08.ttf" id="1_dkvd3"]
+[ext_resource type="Script" uid="uid://dm4g28dnpvm2h" path="res://ui/timer.gd" id="1_dy4p7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy4p7"]
+font = ExtResource("1_dkvd3")
+font_size = 8
+
+[node name="Timer" type="CanvasLayer"]
+script = ExtResource("1_dy4p7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 25.0
+text = "Time: 0"
+label_settings = SubResource("LabelSettings_dy4p7")

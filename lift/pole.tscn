@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwcw7laihp8c5"]
+
+[ext_resource type="Texture2D" uid="uid://blce72cirdrbp" path="res://lift/pole.png" id="1_1mmvv"]
+[ext_resource type="Script" uid="uid://kom33lsf8eyr" path="res://lift/pole.gd" id="2_k2hdv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2hdv"]
+atlas = ExtResource("1_1mmvv")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d61hi"]
+atlas = ExtResource("1_1mmvv")
+region = Rect2(4, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4301"]
+atlas = ExtResource("1_1mmvv")
+region = Rect2(8, 0, 4, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3g8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2hdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d61hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4301")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[node name="Pole" type="AnimatedSprite2D"]
+z_index = -2
+sprite_frames = SubResource("SpriteFrames_o3g8a")
+animation = &"move"
+frame_progress = 0.428338
+script = ExtResource("2_k2hdv")

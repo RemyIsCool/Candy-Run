@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://djtqjet1ri8ao"]
+
+[ext_resource type="Script" uid="uid://wi7w213hku3l" path="res://autoloads/scene_manager.gd" id="1_bjvek"]
+
+[node name="SceneManager" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_bjvek")
+
+[node name="Black" type="Polygon2D" parent="."]
+process_mode = 3
+z_index = 4096
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-20, -18, -17, 198, 347, 196, 340, -14)
